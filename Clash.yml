@@ -141,6 +141,7 @@ rule-providers:
     path: ./RuleSet/Apple.yaml
     url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Extra/Apple/Apple.yaml
     interval: 86400
+    
 rules:
   - DOMAIN-KEYWORD,evernote,Proxy
   - DOMAIN-KEYWORD,dlercloud,Proxy
