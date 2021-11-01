@@ -80,19 +80,19 @@ proxy-groups:
       - BGP
       - GIA
 - name: HC
-  type: url-test
+  type: select
   use:
     - HC-Node
 - name: 5G
-  type: url-test
+  type: select
   use:
     - 5G-Node
 - name: AIA
-  type: url-test
+  type: select
   use:
     - AIA-Node
 - name: IEPL
-  type: url-test
+  type: select
   use:
     - IEPL-Node
 - name: BGP
