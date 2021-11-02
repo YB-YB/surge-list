@@ -53,7 +53,7 @@ function getUserInfo(url) {
   return new Promise((resolve) =>
     setTimeout(
       () =>
-        $httpClient.head(request, (err, resp) => {
+        $httpClient.get(request, (err, resp) => {
           if (err) $done();
           resolve(
             resp.headers[
