@@ -18,24 +18,6 @@ proxy-providers:
             enable: true
             url: http://cp.cloudflare.com
             interval: 3600
-    5G-Node:
-        type: http
-        path: ./DlerCloud/5G-Node.yaml
-        url: url?protocols=smart&list=clash&nolv=1&match=5G
-        interval: 3600
-        health-check:
-            enable: true
-            url: http://cp.cloudflare.com
-            interval: 3600
-    AIA-Node:
-        type: http
-        path: ./DlerCloud/AIA-Node.yaml
-        url: url?protocols=smart&list=clash&nolv=1&match=AIA
-        interval: 3600
-        health-check:
-            enable: true
-            url: http://cp.cloudflare.com
-            interval: 3600
     IEPL-Node:
         type: http
         path: ./DlerCloud/IEPL-Node.yaml
@@ -74,8 +56,6 @@ proxy-groups:
   type: select
   proxies:
       - HC
-      - 5G
-      - AIA
       - IEPL
       - BGP
       - GIA
@@ -83,14 +63,6 @@ proxy-groups:
   type: select
   use:
     - HC-Node
-- name: 5G
-  type: select
-  use:
-    - 5G-Node
-- name: AIA
-  type: select
-  use:
-    - AIA-Node
 - name: IEPL
   type: select
   use:
