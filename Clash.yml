@@ -95,12 +95,6 @@ rule-providers:
     path: ./RuleSet/Streaming.yaml
     url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/StreamingMedia/Streaming.yaml
     interval: 86400
-  Speedtest:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Speedtest.yaml
-    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Speedtest.yaml
-    interval: 86400
   OneDrive:
     type: http
     behavior: classical
@@ -113,14 +107,13 @@ rule-providers:
     path: ./RuleSet/Apple.yaml
     url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Extra/Apple/Apple.yaml
     interval: 86400
-    
 rules:
   - DOMAIN-KEYWORD,evernote,Proxy
   - DOMAIN-KEYWORD,dlercloud,Proxy
+  - DOMAIN-SUFFIX,kurenai.io,Proxy
   - RULE-SET,Unbreak,DIRECT
   - RULE-SET,Global,Proxy
   - RULE-SET,Streaming,Proxy
-  - RULE-SET,Speedtest,Proxy
   - RULE-SET,OneDrive,Proxy
   - RULE-SET,Apple,Apple
   - IP-CIDR,192.168.0.0/16,DIRECT
