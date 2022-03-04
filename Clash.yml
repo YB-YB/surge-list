@@ -12,7 +12,8 @@ proxy-providers:
     HC-Node:
         type: http
         path: ./DlerCloud/HC-Node.yaml
-        url: url?protocols=smart&list=clash&nolv=1&match=HC
+        url: url?protocols=smart&list=clash&nolv=1
+        filter: HC
         interval: 3600
         health-check:
             enable: true
@@ -21,7 +22,8 @@ proxy-providers:
     IEPL-Node:
         type: http
         path: ./DlerCloud/IEPL-Node.yaml
-        url: url?protocols=smart&list=clash&nolv=1&match=IEPL
+        url: url?protocols=smart&list=clash&nolv=1
+        filter: IEPL
         interval: 3600
         health-check:
             enable: true
@@ -30,7 +32,8 @@ proxy-providers:
     BGP-Node:
         type: http
         path: ./DlerCloud/BGP-Node.yaml
-        url: url?protocols=smart&list=clash&nolv=1&match=BGP
+        url: url?protocols=smart&list=clash&nolv=1
+        filter: BGP
         interval: 3600
         health-check:
             enable: true
@@ -39,7 +42,8 @@ proxy-providers:
     GIA-Node:
         type: http
         path: ./DlerCloud/GIA-Node.yaml
-        url: url?protocols=smart&list=clash&nolv=1&match=GIA
+        url: url?protocols=smart&list=clash&nolv=1
+        filter: GIA
         interval: 3600
         health-check:
             enable: true
