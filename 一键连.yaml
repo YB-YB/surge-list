@@ -122,7 +122,6 @@ rule-providers:
 rules:
   - DOMAIN-KEYWORD,evernote,Proxy
   - DOMAIN-KEYWORD,dlercloud,Proxy
-  - DOMAIN-SUFFIX,kurenai.io,Proxy
   - RULE-SET,Unbreak,DIRECT
   - RULE-SET,Global,Proxy
   - RULE-SET,Streaming,Proxy
