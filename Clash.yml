@@ -9,6 +9,16 @@ experimental:
   ignore-resolve-fail: true
 
 proxy-providers:
+    AC-Node:
+        type: http
+        path: ./DlerCloud/AC-Node.yaml
+        url: url?protocols=smart&list=clash&nolv=1
+        filter: HC
+        interval: 3600
+        health-check:
+            enable: true
+            url: http://cp.cloudflare.com
+            interval: 3600
     HC-Node:
         type: http
         path: ./DlerCloud/HC-Node.yaml
@@ -39,17 +49,6 @@ proxy-providers:
             enable: true
             url: http://cp.cloudflare.com
             interval: 3600
-    GIA-Node:
-        type: http
-        path: ./DlerCloud/GIA-Node.yaml
-        url: url?protocols=smart&list=clash&nolv=1
-        filter: GIA
-        interval: 3600
-        health-check:
-            enable: true
-            url: http://cp.cloudflare.com
-            interval: 3600
-
 proxy-groups:
 - name: Apple
   type: select
@@ -59,10 +58,14 @@ proxy-groups:
 - name: Proxy
   type: select
   proxies:
+      - AC
       - HC
       - IEPL
       - BGP
-      - GIA
+- name: AC
+  type: select
+  use:
+    - AC-Node
 - name: HC
   type: select
   use:
@@ -75,10 +78,6 @@ proxy-groups:
   type: select
   use:
     - BGP-Node
-- name: GIA
-  type: select
-  use:
-    - GIA-Node
 
 rule-providers:
   Unbreak:
