@@ -56,9 +56,9 @@ proxy-groups:
   proxies:
     - 🇭🇰深港
     - 🇭🇰广港01
-    - 🇭🇰广港01
     - 🇭🇰广港02
     - 🇭🇰广港03
+    - 🇭🇰广港04
 - name: SG
   type: select
   proxies:
