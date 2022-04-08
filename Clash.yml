@@ -50,11 +50,6 @@ proxy-providers:
             url: http://cp.cloudflare.com
             interval: 3600
 proxy-groups:
-- name: Apple
-  type: select
-  proxies:
-    - DIRECT
-    - Proxy
 - name: Proxy
   type: select
   proxies:
@@ -117,7 +112,7 @@ rules:
   - RULE-SET,Global,Proxy
   - RULE-SET,Streaming,Proxy
   - RULE-SET,OneDrive,Proxy
-  - RULE-SET,Apple,Apple
+  - RULE-SET,Apple,DIRECT
   - IP-CIDR,192.168.0.0/16,DIRECT
   - IP-CIDR,10.0.0.0/8,DIRECT
   - IP-CIDR,10.1.10.0/8,DIRECT
